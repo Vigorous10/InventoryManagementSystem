@@ -1,0 +1,48 @@
+body{
+    background-color:#CDF0EA ;
+    font-family: "Montserrat";
+}
+.big-heading{
+    padding-left: 280px;
+    padding-right: 385px;
+}
+.small-logo{
+    height: 130px;
+}
+.large-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    
+}
+.large-welcome{
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+
+}
+.container{
+    margin-top: 100px;
+    margin-left: 450px;
+}
+.f-group{
+    float: left;
+}
+.f-group label{
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 8px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+
+
+    
+}
+select{
+    border: 1px solid #555;
+    height: 40px;
+    width: 200px;
+    padding: 0 15px;
+    margin-right: 20px;
+}

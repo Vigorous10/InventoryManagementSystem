@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <table cellspacing="10px">
+        <tr >
+
+            <td><img class="small-logo" src="images/bsptcl-logo.png" alt="heading-logo"></td>
+            <td>
+                <h1 class="big-heading">INVENTORY MANAGEMENT SYSTEM</h1>
+            </td>
+           
+        </tr>
+    </table>
+
+    <div class="container">
+        <div class="f-group">
+            <label for="">Zone</label>
+            <select name="slct1" id="slct1" onchange="populate(this.id,'slct2')">
+                <option value="">-- Choose Zone --</option>
+                <option value="patna">Patna</option>
+                <option value="bhagalpur">Bhagalpur</option>
+                <option value="muzaffarpur">Muzaffarpur</option>
+
+            </select>
+        </div>
+
+        <div class="f-group">
+            <label for="">Circle</label>
+            <select name="slct2" id="slct2" onchange="populate(this.id,'slct3')"></select>
+
+        </div>
+        <div class="f-group">
+            <label for="">Division</label>
+            <select name="slct3" id="slct3"></select>
+        </div>
+    </div>
+
+
+ <script>
+    function populate(s1,s2)
+    {
+        var s1=document.getElementById(s1);
+        var s2=document.getElementById(s2);
+
+        s2.innerHTML="";
+        if(s1.value=="patna"){
+            var optionArray=['patna(east)|Patna(East)','patna(west)|Patna(West)','dehri on sone|Dehri On Sone','bhojpur|Bhojpur','gaya|Gaya','biharshariff|Biharshariff'];
+        }
+        else if(s1.value=="bhagalpur"){
+            var optionArray=['bhagalpur|Bhagalpur','begusarai|Begusarai','purnia|Purnia'];
+        }
+        else if(s1.value=="muzaffarpur"){
+            var optionArray=['muzaffarpur|Muzaffarpur','vaishali|Vaishali','darbhanga|Darbhanga','motihari|Motihari','chapra|Chapra','madhepura|Madhepura'];
+        }
+        for(var option in optionArray){
+            var pair=optionArray[option].split("|");
+            var newoption=document.createElement("option");
+
+            newoption.value=pair[0];
+            newoption.innerHTML=pair[1];
+            s2.options.add(newoption);
+        }
+    }
+    
+ </script>
+
+</body>
+
+</html>
